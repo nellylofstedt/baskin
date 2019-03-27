@@ -1,0 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Playfair+Display');
+@import 'palette';
+@import 'reset';
+
+body {
+    background: #000;
+
+    h1 {
+        color: $color3;
+    }
+}
