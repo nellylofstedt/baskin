@@ -86,6 +86,7 @@ body .kontainer main .info {
   padding: 30px;
   border-radius: 20px;
   margin-top: 25px;
+  padding: 20px;
 }
 
 body .kontainer main .info h2 {
@@ -97,8 +98,13 @@ body .kontainer main .info p {
   font-family: 'Merriweather', serif;
 }
 
+body .kontainer main .info button {
+  width: 80px;
+  margin: 110px auto 30px 110px;
+  display: block;
+}
+
 body .kontainer main .info img {
   width: 40px;
-  margin-bottom: 30px;
 }
 /*# sourceMappingURL=style.css.map */
