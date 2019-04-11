@@ -48,6 +48,7 @@ body .kontainer header {
 body .kontainer header h1 {
   color: #030013;
   margin: 10px;
+  text-decoration: underline;
 }
 
 body .kontainer header nav {
@@ -92,19 +93,79 @@ body .kontainer main .info {
 body .kontainer main .info h2 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+  text-decoration: underline;
 }
 
 body .kontainer main .info p {
   font-family: 'Merriweather', serif;
+  line-height: 30px;
+  margin-top: 20px;
 }
 
 body .kontainer main .info button {
   width: 80px;
-  margin: 110px auto 30px 110px;
+  margin: 110px auto 10px 110px;
   display: block;
 }
 
 body .kontainer main .info img {
   width: 40px;
+  margin: 130px 9px 9px 9px;
+}
+
+body .kontainer main .bild {
+  padding: 30px;
+  margin-top: 25px;
+  padding: 20px;
+}
+
+body .kontainer main .meny {
+  width: 359px;
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-top: 42px;
+  padding: 9px;
+}
+
+body .kontainer main .meny h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-decoration: underline;
+}
+
+body .kontainer main .meny h2 {
+  text-decoration: underline;
+}
+
+body .kontainer main .meny p {
+  font-family: 'Merriweather', serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+body .kontainer #form {
+  width: 359px;
+  background-color: rgba(255, 255, 255, 0.486);
+  padding: 50px;
+  margin-top: 100px;
+  margin-left: 60px;
+  padding: 20px;
+}
+
+body .kontainer #form label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin: 30px;
+}
+
+body .kontainer #form input {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+body .kontainer #form button {
+  margin-left: 30px;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */

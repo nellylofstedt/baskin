@@ -28,7 +28,7 @@
             </section>
             <section class="info">  
                 <h2>Mamma Mia</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita fugit voluptate natus ducimus tempore beatae deserunt numquam laudantium, eveniet quia nam iste officia magni nesciunt doloremque, esse molestiae, nisi veritatis?</p>
+                <p>Mamma mia är en äkta italiensk ristorante med rötter från Trieste. Hos oss får du det italienska köket när det är som bäst och i en familjär och trivsam miljö.</p>
                 <button>Meny</button>
                 <img src="./images/NoPath.png">
                 <img src="./images/NoPath-1.png">
