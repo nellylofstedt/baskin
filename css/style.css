@@ -108,8 +108,8 @@ body .kontainer main .info img {
 }
 
 body .kontainer main .info a {
-  margin: 110px 10px 110px 10px;
-  width: 40px;
+  margin: 110px 10px 10px 110px;
+  width: 0px;
   background-color: black;
   color: white;
   padding: 14px 25px;
