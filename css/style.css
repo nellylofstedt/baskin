@@ -102,15 +102,23 @@ body .kontainer main .info p {
   margin-top: 20px;
 }
 
-body .kontainer main .info button {
-  width: 80px;
-  margin: 110px auto 10px 110px;
-  display: block;
-}
-
 body .kontainer main .info img {
   width: 40px;
-  margin: 130px 9px 9px 9px;
+  margin: 110px 15px 15px 15px;
+}
+
+body .kontainer main .info a {
+  margin: 110px 10px 110px 10px;
+  width: 40px;
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+body .kontainer main .info a:hover {
+  color: grey;
 }
 
 body .kontainer main .bild {

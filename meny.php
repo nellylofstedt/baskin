@@ -13,7 +13,7 @@
         <header>
             <h1>Baskin</h1>
             <nav>
-                <a class="button" href="#">Home</a>
+                <a class="button" href="index.php">Home</a>
             </nav>
         </header>
         <main>

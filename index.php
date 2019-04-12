@@ -11,8 +11,8 @@
         <header>
             <h1>Baskin</h1>
             <nav>
-                <a class="button" href="#">Logga in</a>
-                <a class="button" href="#">Registrera</a>
+                <a class="button" href="login.php">Logga in</a>
+                <a class="button" href="registrera.php">Registrera</a>
             </nav>
         </header>
         <main>
@@ -29,7 +29,7 @@
             <section class="info">  
                 <h2>Mamma Mia</h2>
                 <p>Mamma mia är en äkta italiensk ristorante med rötter från Trieste. Hos oss får du det italienska köket när det är som bäst och i en familjär och trivsam miljö.</p>
-                <button>Meny</button>
+                <a href="meny.php">Meny</a>
                 <img src="./images/NoPath.png">
                 <img src="./images/NoPath-1.png">
                 <img src="./images/NoPath-2.png">
