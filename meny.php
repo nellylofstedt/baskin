@@ -1,3 +1,17 @@
+<?php
+/*
+* PHP version 7
+* @category   Slutprojekt
+* @author     Nelly Löfstedt <lofstedtnelly@gmail.com>
+* @license    PHP CC
+*/
+include_once "config-db.inc.php";
+
+session_start();
+if (!isset($_SESSION['login'])) {
+    $_SESSION['login'] = false;
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -10,10 +24,17 @@
 
 <body>
     <div class="kontainer">
-        <header>
-            <h1>Baskin</h1>
+    <header>
+            <a class="button" href="index.php"><h1>Baskin</h1></a>
             <nav>
-                <a class="button" href="index.php">Home</a>
+                <?php
+                if (!$_SESSION['login']) {
+                    echo "<a class=\"button\" href=\"login.php\">Logga in</a>";
+                } else {
+                    echo "<a class=\"button\" href=\"logut.php\">Logga ut</a>";
+                }
+                ?>
+                <a class="button" href="registrera.php">Registrera</a>
             </nav>
         </header>
         <main>
