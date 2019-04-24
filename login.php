@@ -5,7 +5,7 @@
 * @author     Nelly Löfstedt <lofstedtnelly@gmail.com>
 * @license    PHP CC
 */
-include_once "config-db.inc.php";
+include_once "{$_SERVER["DOCUMENT_ROOT"]}/../config/config-db.inc.php";
 
 session_start();
 if (!isset($_SESSION['login'])) {
@@ -39,7 +39,7 @@ if (!isset($_SESSION['login'])) {
         </header>
         <form action="#" id="form" method="post">
             <label for="epost">E-post:</label><br>
-            <input type="text" name="epost" required value="<?php echo isset($_POST['epost']) ? $_POST['epost'] : ' ' ?>"><br>
+            <input type="text" name="epost" required value="<?php echo isset($_POST['epost']) ? $_POST['epost'] : '' ?>"><br>
             <label for="password">Password:</label><br>
             <input type="password" name="pw" required><br>
             <button>Login</button>
@@ -50,6 +50,8 @@ if (isset($_POST["epost"], $_POST["pw"])) {
     /* Skyddar mot farligheter */
     $epost = filter_input(INPUT_POST, "epost", FILTER_SANITIZE_STRING);
     $pw = filter_input(INPUT_POST, "pw", FILTER_SANITIZE_STRING);
+    /* Ta bort eventuella mellanslag i slutet och i början */
+    $epost = trim($epost);
     
     /* Logga in på databasen och skapa en anslutning */
     $conn = new mysqli($hostname, $user, $password, $database); 
@@ -60,16 +62,18 @@ if (isset($_POST["epost"], $_POST["pw"])) {
     }
     
     /* Anslutningen fungerade. Sök efter användaren */
-    $sql = "SELECT * FROM admin WHERE epost ='$epost'";
+    $sql = "SELECT * FROM admin WHERE epost = '$epost'";
     $result = $conn->query($sql);
     
+    var_dump($sql, $result);
+
     /* Kunde SQL-satsen köras? */
     if (!$result) {
         die("Något blev fel med SQL-satsen: " . $conn->error);
     } else {
-        if ($result->num_rows !=0) {
+        if ($result->num_rows != 0) {
             $user = $result->fetch_assoc();
-            
+            var_dump($user);
             if (password_verify($pw, $user['hash'])) {
                 $_SESSION['login'] = true;
                 $_SESSION['epost'] = $user['epost']; 

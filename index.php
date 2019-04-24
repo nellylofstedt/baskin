@@ -5,7 +5,6 @@
 * @author     Nelly Löfstedt <lofstedtnelly@gmail.com>
 * @license    PHP CC
 */
-include_once "config-db.inc.php";
 
 session_start();
 if (!isset($_SESSION['login'])) {
