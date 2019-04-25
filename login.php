@@ -18,6 +18,7 @@ if (!isset($_SESSION['login'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <title>Baskin</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -37,13 +38,13 @@ if (!isset($_SESSION['login'])) {
                 <a class="button" href="registrera.php">Registrera</a>
             </nav>
         </header>
+        <main>
         <form action="#" id="form" method="post">
             <label for="epost">E-post:</label><br>
             <input type="text" name="epost" required value="<?php echo isset($_POST['epost']) ? $_POST['epost'] : '' ?>"><br>
             <label for="password">Password:</label><br>
             <input type="password" name="pw" required><br>
             <button>Login</button>
-        </form>
         <?php  
 /* Ta emot data från formuläret och lagra i tabellen */
 if (isset($_POST["epost"], $_POST["pw"])) {
@@ -64,8 +65,6 @@ if (isset($_POST["epost"], $_POST["pw"])) {
     /* Anslutningen fungerade. Sök efter användaren */
     $sql = "SELECT * FROM admin WHERE epost = '$epost'";
     $result = $conn->query($sql);
-    
-    var_dump($sql, $result);
 
     /* Kunde SQL-satsen köras? */
     if (!$result) {
@@ -73,22 +72,23 @@ if (isset($_POST["epost"], $_POST["pw"])) {
     } else {
         if ($result->num_rows != 0) {
             $user = $result->fetch_assoc();
-            var_dump($user);
             if (password_verify($pw, $user['hash'])) {
                 $_SESSION['login'] = true;
                 $_SESSION['epost'] = $user['epost']; 
                 header("Location:index.php");                    
             } else {
-                echo "<p>Lösenordet stämmer inte, försök igen!</p>";
+                echo "<p class=\"animated rubberBand fel\">Lösenordet stämmer inte, försök igen!</p>";
             }                
         } else {
-            echo "<p>E-posten finns inte, försök igen!</p>";
+            echo "<p class=\"animated rubberBand fel\">E-posten finns inte, försök igen!</p>";
         }
     } 
     /* Kom ihåg att stänga ned anslutningen */
     $conn->close(); 
 }
 ?>
+</form>
+</main>
     </div>
 </body>
 

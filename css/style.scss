@@ -44,20 +44,38 @@ body {
             justify-content: space-between;
             padding: 20px;
 
+            #map {
+                width: 900px;
+                height: 500px;
+            }
+
             .karta {
                 form {
                     color: #FFF;
-
-                    input {}
-
-                    img {}
-
                     input[type="text"] {
                         float: right;
                         width: 250px;
                         border-radius: 6px;
                     }
                 }
+            }
+            .fel {
+                width: 250px;
+                background-color: red;
+                color: white;
+                padding: 10px 25px;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 10px;
+            }
+            .ratt {
+                width: 250px;
+                background-color: green;
+                color: white;
+                padding: 10px 25px;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 10px;
             }
 
             .info {

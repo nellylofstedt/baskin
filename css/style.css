@@ -71,6 +71,11 @@ body .kontainer main {
   padding: 20px;
 }
 
+body .kontainer main #map {
+  width: 900px;
+  height: 500px;
+}
+
 body .kontainer main .karta form {
   color: #FFF;
 }
@@ -79,6 +84,26 @@ body .kontainer main .karta form input[type="text"] {
   float: right;
   width: 250px;
   border-radius: 6px;
+}
+
+body .kontainer main .fel {
+  width: 250px;
+  background-color: red;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+body .kontainer main .ratt {
+  width: 250px;
+  background-color: green;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 body .kontainer main .info {

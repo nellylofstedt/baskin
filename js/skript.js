@@ -13,7 +13,7 @@ function start() {
         if (pw.value != pwa.value) {
             pwa.setCustomValidity("Lösenordet stämmer inte!");
         } else {
-            pwa.setCustomValidity(' ');
+            pwa.setCustomValidity('');
         }
     }
 }

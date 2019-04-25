@@ -5,7 +5,7 @@
 * @author     Nelly Löfstedt <lofstedtnelly@gmail.com>
 * @license    PHP CC
 */
-//include_once "{$_SERVER["DOCUMENT_ROOT"]}/../config/config-db.inc.php";
+include_once "{$_SERVER["DOCUMENT_ROOT"]}/../config/config-db.inc.php";
 
 session_start();
 if (!isset($_SESSION['login'])) {
@@ -18,6 +18,7 @@ echo "<p>Hej</p>";
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Baskin</title>
     <link rel="stylesheet" href="./css/style.css">
@@ -40,23 +41,23 @@ if (!$_SESSION['login']) {
                 <a class="button" href="registrera.php">Registrera</a>
             </nav>
         </header>
+        <main>
         <form action="#" id="form" method="post">
-            <label for="name">Name:</label><br>
-            <input type="text" name="name" required
+            <label>Name:</label><br>
+            <input id="name" type="text" name="name" required
                 value="<?php echo isset($_POST['name']) ? $_POST['name'] : '' ?>"><br>
-            <label for="epost">E-post:</label><br>
-            <input type="text" name="epost" required
+            <label>E-post:</label><br>
+            <input id="epost" type="text" name="epost" required
                 value="<?php echo isset($_POST['epost']) ? $_POST['epost'] : '' ?>"><br>
-            <label for="password">Password:</label><br>
+            <label>Password:</label><br>
             <input id="pw" type="password" name="pw" required><br>
-            <label for="password">Repeat password:</label><br>
-            <input id="pwa" type="password" name="pw" required><br>
+            <label>Repeat password:</label><br>
+            <input id="pwa" type="password" name="pwa" required><br>
             <button>Registrera</button>
-        </form>
         <?php
-        echo "<p>Hej</p>";
+
 /* Ta emot data från formuläret och lagra i tabellen */
-if (isset($_POST["name"], $_POST["epost"], $_POST["pw"])) {
+if (isset($_POST['name'], $_POST['epost'], $_POST['pw'])) {
     
     /* Skyddar mot farligheter */
     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
@@ -64,8 +65,7 @@ if (isset($_POST["name"], $_POST["epost"], $_POST["pw"])) {
     $pw = filter_input(INPUT_POST, "pw", FILTER_SANITIZE_STRING);
     $name = trim($name);
     $epost = trim($epost);
-    echo "hej";
-    
+        
     /* Logga in på databasen och skapa en anslutning */
     $conn = new mysqli($hostname, $user, $password, $database); 
     
@@ -89,10 +89,10 @@ if (isset($_POST["name"], $_POST["epost"], $_POST["pw"])) {
         if (!$result) {
             die("Något blev fel med SQL-satsen: " . $conn->error);
         } else {
-            echo "<p>Användaren är nu registrerad!</p>";
+            echo "<p class=\"animated rubberBand ratt\">Användaren är nu registrerad!</p>";
         }
     } else {
-        echo "<p>Epost adressen används redan!</p>";
+        echo "<p class=\"animated rubberBand fel\">Epost adressen används redan!</p>";
     }
     
     
@@ -102,6 +102,8 @@ if (isset($_POST["name"], $_POST["epost"], $_POST["pw"])) {
 
 
 ?>
+    </form>
+    </main>
     </div>
     <script src="./js/skript.js"></script>
 </body>
